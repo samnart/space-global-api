@@ -10,7 +10,7 @@ import jakarta.persistence.GenerationType;
 // ... other imports
 
 @Entity
-@Table(name = "property_images") // if you want a specific table name
+@Table(name = "property_images")
 public class PropertyImage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
