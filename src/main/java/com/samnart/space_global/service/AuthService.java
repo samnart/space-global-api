@@ -35,6 +35,7 @@ public class AuthService {
         user.setRole(UserRole.GUEST);
 
         User savedUser = userRepository.save(user);
+        String token = "Samuel";
         // String token = jwtTokenProvider.generateToken(savedUser);
 
         return new AuthResponseDTO(token, mapToUserResponseDTO(savedUser));
