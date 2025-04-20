@@ -43,11 +43,11 @@ public class Property {
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    // @Enumerated(EnumType.STRING)
-    // private PropertyType propertyType;
+    @Enumerated(EnumType.STRING)
+    private PropertyType propertyType;
 
-    // @Enumerated(EnumType.STRING)
-    // private ListingType listingType;
+    @Enumerated(EnumType.STRING)
+    private ListingType listingType;
 
     @Column(nullable = false)
     private BigDecimal price;
@@ -71,7 +71,7 @@ public class Property {
 
     private LocalDateTime updatedAt;
 
-    // @OneToMany(mappedBy = "property", cascade = CascadeType.ALL, orphanRemoval = true)
-    // private List<PropertyImage> images;
+    @OneToMany(mappedBy = "property", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<PropertyImage> images;
 }
 
