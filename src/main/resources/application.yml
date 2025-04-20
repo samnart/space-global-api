@@ -11,5 +11,5 @@ spring:
             dialect: org.hibernate.dialect.PostgreSQLDialect
             ddl-auto: update
         show-sql: true
-    flyway:
-        enabled: false  
+    # flyway:
+    #     enabled: false  

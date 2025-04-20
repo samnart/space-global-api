@@ -1,5 +1,10 @@
 package com.samnart.space_global.dto.propertyDTOs;
 
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+import lombok.Data;
+
 @Data
 public class PropertyImageDTO {
     private UUID id;

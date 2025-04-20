@@ -1,5 +1,16 @@
 package com.samnart.space_global.dto.propertyDTOs;
 
+import java.math.BigDecimal;
+import java.util.List;
+
+import com.samnart.space_global.model.ListingType;
+import com.samnart.space_global.model.PropertyType;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import lombok.Data;
+
 @Data
 public class PropertyCreateDTO {
     

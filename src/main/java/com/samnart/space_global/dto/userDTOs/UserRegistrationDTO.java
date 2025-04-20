@@ -1,5 +1,8 @@
 package com.samnart.space_global.dto.userDTOs;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data

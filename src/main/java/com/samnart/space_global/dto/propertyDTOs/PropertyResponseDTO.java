@@ -1,5 +1,16 @@
 package com.samnart.space_global.dto.propertyDTOs;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.UUID;
+
+import com.samnart.space_global.dto.userDTOs.UserResponseDTO;
+import com.samnart.space_global.model.ListingType;
+import com.samnart.space_global.model.PropertyType;
+
+import lombok.Data;
+
 @Data
 public class PropertyResponseDTO {
     private UUID id;
