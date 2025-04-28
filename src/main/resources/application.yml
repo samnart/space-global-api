@@ -6,7 +6,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/space_global
     username: postgres
-    password: Aa1234!@
+    password: Aa1234
     driver-class-name: org.postgresql.Driver
   
   jpa:
@@ -22,6 +22,7 @@ spring:
     enabled: true
     locations: classpath:db/migration
     baseline-on-migrate: true
+
   
   servlet:
     multipart:
@@ -40,7 +41,7 @@ spring:
 
 # JWT Configuration
 jwt:
-  secret: ${JWT_SECRET:your-256-bit-secret-key-for-jwt-token-generation}
+  secret: ${JWT_SECRET:P8r5Yd2jKsTqA9zBnXv6wU3mCeFgHkLpR7xW1oJ0iN4sSyDtZuQ5bGcVfM8aEl7h}
   expiration: 86400000 # 24 hours
 
 # AWS S3 Configuration

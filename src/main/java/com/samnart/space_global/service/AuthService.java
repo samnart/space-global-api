@@ -12,16 +12,17 @@ import com.samnart.space_global.exception.UserAlreadyExistsException;
 import com.samnart.space_global.model.User;
 import com.samnart.space_global.model.UserRole;
 import com.samnart.space_global.repository.UserRepository;
+import com.samnart.space_global.security.JwtTokenProvider;
 
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
 public class AuthService {
+
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-    // private final JwtTokenProvider jwtTokenProvider;
+    private final JwtTokenProvider jwtTokenProvider;
 
     public AuthResponseDTO register(UserRegistrationDTO registrationDTO) {
         if (userRepository.existsByEmail(registrationDTO.getEmail())) {
@@ -37,8 +38,7 @@ public class AuthService {
         user.setRole(UserRole.GUEST);
 
         User savedUser = userRepository.save(user);
-        String token = "Samuel";
-        // String token = jwtTokenProvider.generateToken(savedUser);
+        String token = jwtTokenProvider.generateToken(savedUser);
 
         return new AuthResponseDTO(token, mapToUserResponseDTO(savedUser));
     }
@@ -67,5 +67,4 @@ public class AuthService {
         dto.setCreatedAt(user.getCreatedAt());
         return dto;
     }
-
 }

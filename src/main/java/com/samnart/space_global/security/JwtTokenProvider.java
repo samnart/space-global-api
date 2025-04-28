@@ -10,6 +10,7 @@ import com.samnart.space_global.model.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 
 @Component
@@ -29,7 +30,7 @@ public class JwtTokenProvider {
             .setSubject(user.getId().toString())
             .setIssuedAt(new Date())
             .setExpiration(expiryDate)
-            .signWith(key, SignatureAlgorithms.HS512)
+            .signWith(key, SignatureAlgorithm.HS512)
             .compact();
     }
 
