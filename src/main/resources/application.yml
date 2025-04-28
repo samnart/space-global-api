@@ -6,12 +6,13 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/space_global
     username: postgres
-    password: Aa1234
+    # password: Aa1234
+    password: Aa1234!@
     driver-class-name: org.postgresql.Driver
   
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -19,7 +20,7 @@ spring:
         format_sql: true
   
   flyway:
-    enabled: true
+    enabled: false
     locations: classpath:db/migration
     baseline-on-migrate: true
 
