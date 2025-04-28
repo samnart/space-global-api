@@ -7,6 +7,11 @@ import org.springframework.stereotype.Component;
 
 import com.samnart.space_global.model.User;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+
 @Component
 public class JwtTokenProvider {
     
@@ -31,7 +36,7 @@ public class JwtTokenProvider {
     public String getUserIdFromToken(String token) {
         Key key = Keys.hmacShaKeyFor(jwtSecret.getBytes());
 
-        Claims Claims = Jwts.parserBuilder()
+        Claims claims = Jwts.parserBuilder()
             .setSigningKey(key)
             .build()
             .parseClaimsJws(token)
@@ -42,7 +47,7 @@ public class JwtTokenProvider {
 
     public boolean validateToken(String authToken) {
         try {
-            Key key = Keys.hmacsShaKeyFor(jwtSecret.getBytes());
+            Key key = Keys.hmacShaKeyFor(jwtSecret.getBytes());
             Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(authToken);
             return true;
         } catch (JwtException ex) {

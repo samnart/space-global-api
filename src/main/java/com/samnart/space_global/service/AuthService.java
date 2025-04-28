@@ -7,6 +7,8 @@ import com.samnart.space_global.dto.userDTOs.AuthRequestDTO;
 import com.samnart.space_global.dto.userDTOs.AuthResponseDTO;
 import com.samnart.space_global.dto.userDTOs.UserRegistrationDTO;
 import com.samnart.space_global.dto.userDTOs.UserResponseDTO;
+import com.samnart.space_global.exception.UnauthorizedException;
+import com.samnart.space_global.exception.UserAlreadyExistsException;
 import com.samnart.space_global.model.User;
 import com.samnart.space_global.model.UserRole;
 import com.samnart.space_global.repository.UserRepository;
