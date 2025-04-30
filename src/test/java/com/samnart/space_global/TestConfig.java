@@ -12,7 +12,7 @@ import software.amazon.awssdk.services.s3.S3Client;
 public class TestConfig {
     @Bean
     @Primary
-    public S3Client s3Client() {
+    public S3Client s3ClientTest() {
         return mock(S3Client.class);
     }
 }

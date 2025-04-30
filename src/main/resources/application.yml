@@ -6,8 +6,8 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/space_global
     username: postgres
-    # password: Aa1234
-    password: Aa1234!@
+    password: Aa1234
+    # password: Aa1234!@
     driver-class-name: org.postgresql.Driver
   
   jpa:
@@ -48,10 +48,22 @@ jwt:
 # AWS S3 Configuration
 aws:
   s3:
-    bucket: ${AWS_S3_BUCKET:space-global-images}
-    region: ${AWS_REGION:us-east-1}
-    access-key: ${AWS_ACCESS_KEY}
-    secret-key: ${AWS_SECRET_KEY}
+    bucket: space-global
+    region: US_EAST_1
+    access-key: minioadmin
+    secret-key: minioadmin
+    endpoint: http://localhost:9000
+    
+# cloud:
+#   aws:
+#     credentials:
+#       access-key: minioadmin
+#       secret: minioadmin
+#     region:
+#       static: us-east-1
+#     s3:
+#       bucket: space-global
+#       endpoint: http://localhost:9000
 
 # Server Configuration
 server:
@@ -65,3 +77,5 @@ logging:
     com.space_global: DEBUG
     org.springframework.web: INFO
     org.hibernate.SQL: DEBUG
+    org.springframework.security: DEBUG
+  

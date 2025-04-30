@@ -1,8 +1,7 @@
 package com.samnart.space_global.specification;
 
-
-
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Component;
 
 import com.samnart.space_global.dto.propertyDTOs.PropertySearchDTO;
 import com.samnart.space_global.model.Property;
@@ -11,6 +10,7 @@ import jakarta.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class PropertySpecification {
     
     public static Specification<Property> getPropertySearchSpecification(PropertySearchDTO searchDTO) {

@@ -3,6 +3,7 @@ package com.samnart.space_global.security;
 import java.security.Key;
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.samnart.space_global.model.User;
@@ -16,8 +17,10 @@ import io.jsonwebtoken.security.Keys;
 @Component
 public class JwtTokenProvider {
     
+    @Value("${jwt.secret}")
     private String jwtSecret;
 
+    @Value("${jwt.expiration}")
     private int jwtExpirationInMs;
 
     public String generateToken(User user) {

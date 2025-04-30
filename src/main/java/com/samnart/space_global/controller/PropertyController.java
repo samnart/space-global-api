@@ -1,7 +1,5 @@
 package com.samnart.space_global.controller;
 
-
-
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -26,6 +24,11 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class PropertyController {
     private final PropertyService propertyService;
+
+    // @GetMapping
+    // public String getAll() {
+    //     return "Testing endpoint";
+    // }
     
     @PostMapping
     public ResponseEntity<PropertyResponseDTO> createProperty(
